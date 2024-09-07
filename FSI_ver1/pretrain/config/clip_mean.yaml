@@ -1,0 +1,30 @@
+data_path : "/workspace/Dataset/FSI/" # Root Path for the dataset
+
+synthetic_path : "generated_data_preprocessed.csv"
+test_path : "train.csv" # relative path to the data_path
+num_classes : 13
+use_all : False 
+
+model : Tabular_CLIP # Tabular_CLIP
+
+model_path : "run/train9/best_model.pt"
+
+dataset : CLIP_dataset # CLIP_dataset
+
+blocks : 8
+alpha : 30 # additional columns
+dimension : 256 # for each columns
+
+random_seed : 101
+
+input_size : 62
+
+batch_size : 128
+
+threshold : 0.5
+
+test : True
+
+task : mean
+
+feature_path : "feature_extraction"

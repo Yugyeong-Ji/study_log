@@ -1,0 +1,54 @@
+data_path : "/workspace/Dataset/FSI/" # Root Path for the dataset
+
+# synthetic_path : "generated_data.csv"
+# train_path : "train.csv"
+# val_path : "val.csv"
+# use_all : True # TO use all synthetic data & train.csv
+
+synthetic_path : "train_sample_preprocessed.csv"
+train_path :  "train_sample_preprocessed.csv"
+val_path : "val.csv"
+use_all : False # TO use all synthetic data & train.csv
+
+
+# synthetic_path : "generated_data.csv"
+# train_path : "train_preprocessed.csv"
+# val_path : "val.csv"
+# use_all : False # TO use all synthetic data & train.csv
+
+pretrained : True
+pretrained_path : "/workspace/Personal_Development/Dacon_FSI/pretrain/run/train8/best_model.pt"
+freeze : True
+
+
+test_path : "test.csv" # relative path to the data_path ( optional )
+
+dataset : CSV_Binary_dataset # CSV_Binary_dataset,
+
+num_classes : 13
+
+
+# model : simple_model # Write python file name inside model/
+model : model_v2 # model_v1, model_v2
+
+blocks : 8
+alpha : 30 # additional columns
+dimension : 256 # for each columns
+
+random_seed : 101
+split_ratio : 0.8
+
+input_size : 57
+
+batch_size : 128
+lr : 0.0005 # learning rate
+epochs : 100
+threshold : 0.5
+
+metric : multiclass_classification #  binary_classification, multiclass_classification
+
+test : False
+
+loss : original_CE # classweight_CE, original_CE, dynamic_weight_CE, focal_loss
+gamma : 2
+optimizer : 

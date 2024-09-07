@@ -1,0 +1,55 @@
+data_path : "/workspace/Dataset/FSI/" # Root Path for the dataset
+
+# synthetic_path : "generated_data.csv"
+# train_path : "train.csv"
+# val_path : "val.csv"
+# use_all : True # TO use all synthetic data & train.csv
+
+# synthetic_path : "generated_data.csv"
+# train_path : "generated_data.csv"
+# val_path : "train.csv" # "train_sample.csv", "train.csv""
+# use_all : False # TO use all synthetic data & train.csv
+
+synthetic_path : "generated_data.csv"
+train_path :   "generated_data.csv"
+val_path :   "train.csv"
+use_all : False # TO use all synthetic data & train.csv
+
+split_ratio : 0.8
+
+random_seed : 143256
+
+test_path : "test.csv" # relative path to the data_path ( optional )
+
+dataset : CLIP_dataset # CLIP_dataset
+
+num_classes : 13
+
+model : Tabular_CLIP # Tabular_CLIP
+
+
+input_size : 60
+
+blocks : 16 # number of transformer blocks
+alpha : 30 # additional columns
+dimension : 256 # for each columns
+
+
+batch_size : 512
+lr : 0.001 # learning rate
+epochs : 200
+threshold : 0.5
+temperature : 0.05
+
+metric : clip_evaluation #  clip_evaluation
+
+test : False
+
+loss : contrastive_loss #  MSE, contrastive_loss, e_contrastive_loss
+
+augmentation : False
+
+optimizer : 
+
+pretrained : False
+pretrained_path : run/train1/best_model.pt

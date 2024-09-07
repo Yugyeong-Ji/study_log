@@ -1,0 +1,18 @@
+apt-get update
+apt-get upgrade
+apt-get install libgl1-mesa-glx libglib2.0-0 htop ffmpeg git
+
+
+pip install pandas
+pip install ctgan
+pip install pyyaml
+pip install tqdm
+pip install sdv
+pip install einops
+
+conda install xgboost
+
+pip install pycaret
+pip install pyspark
+pip install fugue
+pip install autogluon
